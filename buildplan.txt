@@ -1,0 +1,11 @@
+Building a video game console is actually very simple. First, I made sure my Java program worked. It should be ran as an application and obviously needs a main class. Once the program runs reliably and without errors, the program must be exported as an executable .jar file. Eclipse does this automatically, and there is an option for a "Runnable JAR" export in the export menu. 
+
+The Raspberry Pi (RPi) must be configured to run Java files. I've found that exporting the program as a Linux executable does not work for me. There are many distributions of the Java Development Kit (JDK), but the easiest one to install on the RPi is OpenJDK, which is not an official Oracle distribution but works fine for my game. I installed Java through LXTerminal, which is similar to Command Prompt on Windows, with the command "sudo apt-get install openjdk-6-jdk".
+
+To test java, use the command "java -version". After that, I uploaded a JAR to my SD card hard drive. The program can be run with the command "sudo java -jar /boot/nameofyourprogram.jar". 
+
+I made my controller using a breadboard, ten buttons, jumper wires, and an Arduino Uno. The circuit was relatively simple. There are ten buttons running in parallel. When a button is pressed, it completes a line from the 5V pin to the respective numbered pin. The pins are read and the appropriate letter is sent through serial. For more information on the circuit, check the schematic.
+
+An Arduino and a Java program can communicate with a helpful library I found, which is named 'jssc". It comes as a jar and can be placed into the project directly. I imported the serial classes and checked for a key press every fifty milliseconds. For the code, check the github repo (my username is "Parthia"). 
+
+I got the game to display on the monitor with an HDMI cable. If you buy the monitor, do not use the DVI input. I glued together a box for the game, and I was done.
